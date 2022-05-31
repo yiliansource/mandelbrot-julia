@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+.canvas-views {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.canvas-container {
+    position: relative;
+}
+.canvas-container.has-handle {
+    cursor: pointer;
+}
+.canvas-container.has-handle .control-handle {
+    position: absolute;
+    background: red;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+.canvas-container.has-handle .control-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+.canvas-container canvas {
+    border-radius: 8px;
+}
